@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="utf-8">
+<html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Voces de Chiapas: tseltal, ch'ol y zoque</title>
 <meta name="description" content="Traductor y diccionario de tseltal, ch'ol y zoque con fuentes citadas, audio de hablantes, mapa de Chiapas y lenguaje de señas. Página desarrollada por Eli Melchor Montejo, del COBACH Plantel 145 «Tuxtla Sur», con la asesoría del profesor Roque Cruz Vázquez.">
 <meta name="author" content="Eli Melchor Montejo · COBACH Plantel 145 Tuxtla Sur · asesor: Roque Cruz Vázquez">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#f6f2e9" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#11161d" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_MX">
 <meta property="og:title" content="Voces de Chiapas: tseltal, ch'ol y zoque">
 <meta property="og:description" content="Tres lenguas originarias de Chiapas: traductor, diccionario con fuentes, mapa y palabras básicas en lengua de señas.">
 <meta name="twitter:card" content="summary">
-<script>(function(){try{var vt=localStorage.getItem("vc-theme");if(vt)document.documentElement.dataset.theme=vt;var vf=parseInt(localStorage.getItem("vc-font")||"100",10);if(vf>=85&&vf<=140)document.documentElement.style.fontSize=vf+"%"}catch(e){}})();</script>
+<script>(function(){try{document.documentElement.dataset.theme="light";try{localStorage.removeItem("vc-theme")}catch(e){}var vf=parseInt(localStorage.getItem("vc-font")||"100",10);if(vf>=85&&vf<=140)document.documentElement.style.fontSize=vf+"%"}catch(e){}})();</script>
 <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxZTRmOGYiLz48cGF0aCBkPSJNMCA0NCA2NCAyMHYxMEwwIDU0WiIgZmlsbD0iIzBkNmI1ZCIvPjxwYXRoIGQ9Ik0wIDU0IDY0IDMwdjhMMCA2MloiIGZpbGw9IiNjOThhMTIiLz48cGF0aCBkPSJNMzIgMTAgNDggMzIgMzIgNTQgMTYgMzJaIiBmaWxsPSIjZmZmZGY4Ii8+PHBhdGggZD0iTTMyIDIxIDM5IDMyIDMyIDQzIDI1IDMyWiIgZmlsbD0iIzljM2YyYyIvPjwvc3ZnPg==">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -672,6 +671,64 @@ h2.sec::after{background:var(--line)}
 .about-logo{width:120px;height:120px;background:var(--cobach-logo) center/contain no-repeat;background-color:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 10px 24px -22px rgba(10,25,41,.45)}
 .foot-logo{width:54px;height:54px;background:var(--cobach-logo) center/contain no-repeat;background-color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:8px}
 
+
+/* Selector de idioma y modo claro */
+html[data-theme="light"]{color-scheme:light}
+.tools{gap:5px}
+.langlabel{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(247,242,231,.55);padding-left:4px}
+.langdrop{position:relative}
+.langbtn{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:#fff;border-radius:5px;padding:6px 8px;font:600 .72rem/1.1 var(--sans);cursor:pointer;transition:background .2s,border-color .2s}
+.langbtn:hover{background:rgba(255,255,255,.14)}
+.langbtn .dot,.langmenu .dot{width:8px;height:8px;border-radius:50%;flex:0 0 auto;background:var(--d,var(--maize))}
+.langbtn[data-lang="es"]{--d:#C3943C}
+.langbtn[data-lang="tseltal"]{--d:var(--tseltal)}
+.langbtn[data-lang="chol"]{--d:var(--chol)}
+.langbtn[data-lang="zoque"]{--d:var(--zoque)}
+.caret{font-size:.6rem;line-height:1;margin-left:1px;transition:transform .2s}
+.langbtn[aria-expanded="true"] .caret{transform:rotate(180deg)}
+.langmenu{position:absolute;top:calc(100% + 6px);right:0;min-width:150px;background:#0A1929;border:1px solid rgba(255,255,255,.18);border-radius:7px;padding:4px;box-shadow:0 14px 34px -14px rgba(0,0,0,.55);z-index:140;display:flex;flex-direction:column;gap:2px;animation:dropIn .18s ease}
+.langmenu[hidden]{display:none}
+.langmenu .langpick{display:flex;align-items:center;gap:7px;width:100%;border:0;background:none;color:rgba(247,242,231,.85);padding:7px 9px;border-radius:4px;font:600 .72rem/1.2 var(--sans);cursor:pointer;text-align:left}
+.langmenu .langpick:hover{background:rgba(255,255,255,.1);color:#fff}
+.langmenu .langpick[aria-selected="true"]{background:rgba(255,255,255,.14);color:#fff}
+.langmenu .langpick[data-lang="es"]{--d:#C3943C}
+.langmenu .langpick[data-lang="tseltal"]{--d:var(--tseltal)}
+.langmenu .langpick[data-lang="chol"]{--d:var(--chol)}
+.langmenu .langpick[data-lang="zoque"]{--d:var(--zoque)}
+@keyframes dropIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@media(max-width:520px){.langmenu{right:auto;left:0}}
+.langmode{margin-top:10px;padding:8px 10px;border-left:2px solid var(--maize);background:color-mix(in srgb,var(--maize) 8%,var(--surface));color:var(--muted);max-width:62ch}
+body{transition:background-color .3s ease,color .3s ease}
+body.langswap main,body.page-lang main{animation:langswap .5s ease both}
+@keyframes langswap{from{opacity:.55;transform:translateY(3px)}to{opacity:1;transform:none}}
+@media(max-width:980px){.langlabel{display:none}.langbar{max-width:230px}.tools{max-width:100%}}
+@media(max-width:520px){.langbar{max-width:190px}.langpick{font-size:.62rem;padding:5px 6px}}
+@media(prefers-reduced-motion:reduce){body.langswap main,body.page-lang main{animation:none}}
+
+
+@media(min-width:981px){
+  .top .nb{padding-inline:7px;font-size:.83rem}
+  .langbar{max-width:190px}
+  .tools{gap:2px}
+}
+
+.tools .langpick{display:inline-flex;min-width:0;min-height:30px;padding:5px 7px;border-radius:4px;background:transparent;color:rgba(247,242,231,.72);font-weight:600;line-height:1.1}
+.tools .langpick[aria-pressed="true"]{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.28);color:#fff}
+
+
+.langsub{display:block;font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.01em;line-height:1.4;margin-top:8px;color:var(--muted)}
+
+
+@media(max-width:1120px){
+  .top .wrap{flex-wrap:wrap;gap:4px 10px}
+  .tools{margin-left:auto}
+  nav[role=tablist]{order:3;width:100%;margin-left:0;justify-content:flex-start}
+}
+
+
+.tools .langbtn{display:inline-flex;min-width:0;min-height:30px;border-radius:5px;color:#fff;font-weight:600;line-height:1.1;place-items:initial}
+.tools .langbtn:hover{background:rgba(255,255,255,.14)}
+
 /* Pie editorial */
 .foot{background:#0A1929;border-top:0;color:rgba(247,242,231,.66);padding:44px 0 52px;margin-top:0}
 .foot-in{gap:24px}
@@ -736,10 +793,20 @@ h2.sec::after{background:var(--line)}
       <a class="nb" role="tab" href="#senas" role="tab" data-t="senas" id="tab-senas" aria-controls="senas" aria-selected="false" tabindex="-1">Lenguaje de Señas</a>
       <a class="nb" role="tab" href="#creditos" role="tab" data-t="creditos" id="tab-creditos" aria-controls="creditos" aria-selected="false" tabindex="-1">Créditos</a>
     </nav>
-    <div class="tools" role="group" aria-label="Tamaño de letra y tema">
+    <div class="tools" role="group" aria-label="Tamaño de letra e idioma de la página">
       <button id="sm" type="button" aria-label="Reducir tamaño de letra" title="Reducir letra">A−</button>
       <button id="bg" type="button" aria-label="Aumentar tamaño de letra" title="Aumentar letra">A+</button>
-      <button id="th" type="button" aria-label="Cambiar el tema de color" title="Modo claro u oscuro" aria-pressed="false">◐</button>
+      <div class="langdrop" aria-label="Idioma de la página" title="Idioma de la página">
+        <button id="langBtn" class="langbtn" type="button" aria-haspopup="listbox" aria-expanded="false">
+          <span class="dot es" id="langDot"></span><span id="langLabel">Español</span><span class="caret" aria-hidden="true">▾</span>
+        </button>
+        <div class="langmenu" id="langMenu" role="listbox" hidden>
+          <button class="langpick" type="button" data-lang="es" role="option" aria-selected="true"><span class="dot es"></span>Español</button>
+          <button class="langpick" type="button" data-lang="tseltal" role="option" aria-selected="false"><span class="dot tseltal"></span>Tseltal</button>
+          <button class="langpick" type="button" data-lang="chol" role="option" aria-selected="false"><span class="dot chol"></span>Ch'ol</button>
+          <button class="langpick" type="button" data-lang="zoque" role="option" aria-selected="false"><span class="dot zoque"></span>Zoque</button>
+        </div>
+      </div>
     </div>
   </div>
 </header>
@@ -750,6 +817,7 @@ h2.sec::after{background:var(--line)}
     <p class="eyebrow">Chiapas · lenguas originarias</p>
     <h1>Tres lenguas,<br> <em>una misma tierra</em></h1>
     <p class="lead">Tseltal, ch'ol y zoque. Traduce palabras del español, consulta un diccionario con fuentes y escucha a hablantes cuando existe una grabación oficial.</p>
+    <p class="mini langmode" id="langNotice" aria-live="polite" hidden></p>
     <div class="hero-s"><input id="hq" type="search" placeholder="Busca una palabra: agua, casa, mamá…" aria-label="Buscar una palabra para traducir" autocomplete="off"><button class="go" id="hgo" type="button">Traducir</button></div>
     <p class="hero-note">Todo el contenido proviene de diccionarios y materiales publicados. Sin voces ni traducciones generadas por inteligencia artificial.</p>
   </div>
@@ -1435,7 +1503,7 @@ $("#dq").oninput=function(){st.dn=80;dict()};$("#dc").onchange=function(){st.dn=
 $$(".low").forEach(function(c){c.onchange=function(){showLow=c.checked;$$(".low").forEach(function(x){x.checked=showLow});trans();az();if(!$("#diccionario").hidden)dict();wod()}});
 $("#bg").onclick=function(){size=Math.min(150,size+10);document.documentElement.style.fontSize=size+"%"};
 $("#sm").onclick=function(){size=Math.max(80,size-10);document.documentElement.style.fontSize=size+"%"};var size=100;
-$("#th").onclick=function(){var r=document.documentElement,d=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=d?"light":"dark"};
+
 function csvMsg(t){var m=$("#csvmsg");if(m)m.textContent=t}
 function cleanCell(x){return String(x==null?"":x).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g,"").replace(/[<>"]/g,"").replace(/\s+/g," ").trim().slice(0,300)}
 $("#csvb").onclick=function(){$("#csv").click()};
@@ -1685,7 +1753,7 @@ function applyTheme(mode){
   else root.removeAttribute("data-theme");
   paintTheme();
 }
-applyTheme(get("vc-theme"));
+applyTheme("light");
 if(thBtn)thBtn.onclick=function(){
   var next=isDark()?"light":"dark";
   applyTheme(next);
@@ -1997,6 +2065,108 @@ setTimeout(function(){
   addEventListener("scroll",paint,{passive:true});
   addEventListener("resize",paint);
   paint();
+})();
+</script>
+<script>
+(function(){
+  var LAB={
+    es:{inicio:"Inicio",traductor:"Traductor",diccionario:"Diccionario",mapa:"Mapa",senas:"Lenguaje de Señas",creditos:"Créditos"},
+    tseltal:{inicio:"Inicio · Jajch'ibal",traductor:"Traductor · Jk'asesej k'op",diccionario:"Diccionario",mapa:"Mapa",senas:"Lenguaje de Señas",creditos:"Créditos"},
+    chol:{inicio:"Inicio",traductor:"Traductor",diccionario:"Diccionario",mapa:"Mapa",senas:"Lenguaje de Señas",creditos:"Créditos"},
+    zoque:{inicio:"Inicio · Wina",traductor:"Traductor",diccionario:"Diccionario",mapa:"Mapa · Krokis",senas:"Lenguaje de Señas",creditos:"Créditos"}
+  };
+  var NAME={es:"español",tseltal:"tseltal · Bats'il k'op",chol:"ch'ol · Lakty'añ",zoque:"zoque · Ore"};
+  var LANGDISP={es:"Español",tseltal:"Tseltal",chol:"Ch'ol",zoque:"Zoque"};
+  var HERO={
+    tseltal:'<span lang="tzh">Oxib k\'op, jun lum</span><small class="langsub">Tres lenguas, una misma tierra</small>',
+    chol:'<span lang="ctu">Ux p\'ej t\'an, jun lum</span><small class="langsub">Tres lenguas, una misma tierra</small>',
+    zoque:'<span lang="zoc">Tu\'kay tzame, tum kum.kuy\'</span><small class="langsub">Tres lenguas, una misma tierra</small>'
+  };
+  var PAGE_TITLE=document.title;
+  var CODE={es:"es",tseltal:"tzh",chol:"ctu",zoque:"zoc"};
+  function apply(l,initial){
+    if(!LAB[l])l="es";
+    document.documentElement.lang=CODE[l];
+    document.documentElement.dataset.pageLang=l;
+    document.querySelectorAll(".nb[data-t]").forEach(function(a){var t=a.getAttribute("data-t");if(LAB[l][t])a.textContent=LAB[l][t]});
+    document.querySelectorAll(".langpick").forEach(function(b){var on=b.getAttribute("data-lang")===l;b.setAttribute("aria-selected",on?"true":"false");b.setAttribute("aria-pressed",on?"true":"false")});
+    var lb=document.getElementById("langBtn"),ld=document.getElementById("langLabel"),dot=document.getElementById("langDot"),menu=document.getElementById("langMenu");
+    if(lb){lb.dataset.lang=l;lb.setAttribute("aria-expanded","false")}
+    if(ld)ld.textContent=LANGDISP[l];
+    if(dot)dot.className="dot "+l;
+    if(menu)menu.hidden=true;
+    var h1=document.querySelector(".hero-copy h1");
+    if(h1){if(!h1.dataset.esHtml)h1.dataset.esHtml=h1.innerHTML;h1.innerHTML=l==="es"?h1.dataset.esHtml:HERO[l]}
+    document.title=l==="es"?PAGE_TITLE:"Voces de Chiapas · "+NAME[l].split(" · ")[0];
+    var n=document.getElementById("langNotice");
+    if(n){
+      if(l==="es"){n.hidden=true;n.textContent=""}
+      else{n.hidden=false;n.innerHTML="Vista completa en <strong>"+NAME[l]+"</strong>. La página se tradujo con los diccionarios; donde no hay una equivalencia documentada se conserva el español."}
+    }
+    if(l!=="es")document.body.classList.add("page-lang");
+    try{localStorage.setItem("vc-pagelang",l)}catch(e){}
+    if(typeof st==="object"){
+      st.from="es";
+      st.to=(l==="es"?"tseltal":l);
+      st.dk=(l==="es"?"tseltal":l);
+      if(typeof langs==="function")langs();
+      if(typeof trans==="function")trans();
+      var dic=document.getElementById("diccionario");
+      if(typeof dict==="function"&&dic&&!dic.hidden)dict();
+    }
+  }
+  var TL_SKIP='script,style,noscript,svg,code,pre,select,option,input,textarea,template,audio,video,.nb,.brand,.hero-copy h1,#langNotice,.langdrop,.langmenu,.langbtn,.langpick,.caret,.tools button,.tr-seg,.tr-summary,.tr-dst,.tr-src,.tr-meta,.row,.nat,.es,.aka,.minfo-grid,.minfo-pick,.lg,.lsm-spell,.lsm-letter,.chip[data-ex],.chip[data-lsm],#covline,#stbl,.sg,.dstat,.minfo-pick,#minfo h2,#minfo h2 small,.map-capital,.mun-label,.map-neighbors,#mapSelect,.stats dd,#tinCount,.lsm-sep,.wod,.foot nav,#dc,#dseg,#dl,#csvmsg';
+  var TL_DONE=(typeof WeakSet!=="undefined")?new WeakSet():{add:function(){},has:function(){return false}};
+  function isSkip(node){var el=node.nodeType===3?node.parentElement:node;return !!(el&&el.closest&&el.closest(TL_SKIP));}
+  function tlText(es,lang){
+    try{var r=trTemplate(es,"es",lang);if(r&&r.text)return r.text.replace(/^[¿¡]+/,"").replace(/[.!?]+$/,"");}catch(e){}
+    try{var s=trSegment(es,"es",lang);if(s&&s.text){var t=s.text.trim();if(t&&t!==es)return t;}}catch(e){}
+    return es;
+  }
+  function walkNode(root,lang){
+    if(!root)return;
+    if(root.nodeType===3){
+      var raw=root.nodeValue,t=raw?raw.trim():"";
+      if(t&&!/^[\s\d.,;:+\-/%()¿?¡!–—]+$/.test(t)&&!isSkip(root)&&!TL_DONE.has(root)){
+        TL_DONE.add(root);root.nodeValue=tlText(t,lang);
+      }
+      return;
+    }
+    if(root.nodeType!==1)return;
+    if(isSkip(root))return;
+    if(!TL_DONE.has(root)){
+      TL_DONE.add(root);
+      if(root.getAttribute){
+        var ph=root.getAttribute("placeholder");if(ph)root.setAttribute("placeholder",tlText(ph,lang));
+        var ti=root.getAttribute("title");if(ti&&!/^(Reducir|Aumentar|Idioma)/.test(ti))root.setAttribute("title",tlText(ti,lang));
+      }
+    }
+    for(var i=0;i<root.childNodes.length;i++)walkNode(root.childNodes[i],lang);
+  }
+  var TL_OBS=null;
+  function translateWhole(lang){
+    if(lang==="es")return;
+    walkNode(document.body,lang);
+    if(TL_OBS)TL_OBS.disconnect();
+    TL_OBS=new MutationObserver(function(muts){
+      muts.forEach(function(m){if(m.addedNodes)Array.prototype.slice.call(m.addedNodes).forEach(function(n){walkNode(n,lang)})});
+    });
+    TL_OBS.observe(document.body,{childList:true,subtree:true});
+  }
+  var langBtn=document.getElementById("langBtn"),langMenu=document.getElementById("langMenu");
+  if(langBtn){langBtn.addEventListener("click",function(e){e.stopPropagation();var open=langBtn.getAttribute("aria-expanded")==="true";langBtn.setAttribute("aria-expanded",open?"false":"true");if(langMenu)langMenu.hidden=open;})}
+  document.addEventListener("click",function(e){if(langBtn&&langMenu&&!e.target.closest(".langdrop")){langBtn.setAttribute("aria-expanded","false");langMenu.hidden=true}});
+  document.querySelectorAll(".langpick").forEach(function(b){b.addEventListener("click",function(){var l=b.getAttribute("data-lang");try{localStorage.setItem("vc-pagelang",l)}catch(e){};document.body.classList.add("langswap");setTimeout(function(){location.reload()},240)})});
+  var saved="es";try{saved=localStorage.getItem("vc-pagelang")||"es"}catch(e){}
+  apply(saved,true);
+  if(saved!=="es")setTimeout(function(){translateWhole(saved)},50);
+})();
+</script>
+<script>
+(function(){
+  var moreIrreg={vienes:"venir",vienen:"venir",dices:"decir",dicen:"decir",sabes:"saber",saben:"saber",conozco:"conocer",conoces:"conocer",conoce:"conocer",conocen:"conocer",duermo:"dormir",duermes:"dormir",duerme:"dormir",dormimos:"dormir",duermen:"dormir",comes:"comer",comemos:"comer",comen:"comer",bebo:"beber",bebes:"beber",bebemos:"beber",beben:"beber",veo:"ver",ves:"ver",vemos:"ver",oigo:"oír",oyes:"oír",oye:"oír",oyen:"oír"};
+  var moreSyn={contenta:"contento",contentos:"contento",enojada:"enojado",enojados:"enojado",pequena:"pequeno",pequenas:"pequeno",bonitas:"bonito",hermoso:"bonito",hermosa:"bonito",automovil:"carro",automóvil:"carro",colectivo:"bus",camion:"bus",camión:"bus"};
+  Object.assign(TR_IRREG,moreIrreg);Object.assign(TR_WORD_SYN,moreSyn);
 })();
 </script>
 </body></html>
